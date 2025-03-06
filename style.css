@@ -155,7 +155,7 @@ nav ul li ul li a:hover {
         color: #333; /* Warna teks untuk tautan */
         text-decoration: none; /* Hapus garis bawah */
         display: block; /* Buat tautan menjadi blok */
-}
+    }
 
     /* Responsive Font Sizes */
     body {
@@ -168,29 +168,27 @@ nav ul li ul li a:hover {
 
     nav ul li a {
         font-size: 0.9rem; /* Ukuran font untuk tautan navigasi */
-}
+    }
 
     .slider .overlay h2 {
         font-size: 2rem; /* Ukuran font untuk overlay slider */
-}
+    }
 
     .slider .overlay p {
         font-size: 1rem; /* Ukuran font untuk paragraf di overlay */
-}
+    }
 
     .complaint-form h2 {
         font-size: 1.2rem; /* Ukuran font untuk judul form pengaduan */
-}
+    }
 
-.umkm-info h3 {
+    .umkm-info h3 {
         font-size: 1rem; /* Ukuran font untuk nama UMKM */
     }
 
     #layanan h2 {
         font-size: 1.8rem; /* Ukuran font untuk judul layanan */
     }
-
-
 }
 
 @media (max-width: 480px) {
@@ -204,11 +202,11 @@ nav ul li ul li a:hover {
 
     nav ul li a {
         font-size: 0.8rem; /* Ukuran font untuk tautan navigasi */
-}
+    }
 
     .slider .overlay h2 {
         font-size: 1.5rem; /* Ukuran font untuk overlay slider */
-}
+    }
 
     .slider .overlay p {
         font-size: 0.9rem; /* Ukuran font untuk paragraf di overlay */
@@ -220,9 +218,9 @@ nav ul li ul li a:hover {
 
     .umkm-info h3 {
         font-size: 0.9rem; /* Ukuran font untuk nama UMKM */
-}
+    }
 
-#layanan h2 {
+    #layanan h2 {
         font-size: 1.5rem; /* Ukuran font untuk judul layanan */
     }
 }
@@ -741,7 +739,7 @@ button.complaint-btn:hover {
 
 /* Kontak Styles */
 #kontak {
-    padding: 40px 20px;
+    padding: 80px 20px 40px; /* Increased top padding to move content down */
     background-color: #f5f5f5;
 }
 
@@ -749,9 +747,9 @@ button.complaint-btn:hover {
     text-align: center;
     color: #333;
     margin-bottom: 30px;
-    font-size: 2em;
+    font-size: 2.5rem;
     font-weight: 600;
-    text-transform: uppercase;
+    display: block; /* Ensure heading is always visible */
 }
 
 .kontak-container {
@@ -884,9 +882,9 @@ button[type="submit"]:hover {
         #kontak {
     padding: 40px 20px;
     background-color: #f5f5f5;
-}
+    }
 
-        #kontak h2 {
+    #kontak h2 {
     text-align: center;
             color: #333;
     margin-bottom: 30px;
@@ -935,7 +933,7 @@ button[type="submit"]:hover {
 .jam-operasional li {
     margin: 10px 0;
     color: #555;
-}
+    }
 
 .jam-operasional strong {
     color: #2c3e50;
@@ -1160,6 +1158,8 @@ button[type="submit"]:hover {
     .logo img {
         width: 40px;
         height: 40px;
+        /*border-radius: 50%; 
+         object-fit: cover;*/
     }
 
     .logo h1 {
@@ -1327,6 +1327,8 @@ header {
 .logo img {
     width: 50px;
     height: 50px;
+    border-radius: 50%; /* Makes the logo circular */
+    object-fit: cover; /* Ensures the image covers the circular area properly */
 }
 
 .logo h1 {
@@ -1586,8 +1588,10 @@ nav ul li ul li a:hover {
 }
 
 .perangkat-item h5 {
-    color: #555; /* Warna untuk jabatan */
-    margin-bottom: 10px;
+    color: #555;
+    margin: 0; /* Remove default margin */
+    line-height: 1.2; /* Reduce line height to bring text closer */
+    font-size: 0.9rem;
 }
 
 /* Responsive Design */
@@ -1638,7 +1642,7 @@ nav ul li ul li a:hover {
 }
 
 .struktur h2 {
-    color: #E84C3D; /* Warna judul */
+    color: #333; /* Warna judul */
     font-size: 2.5rem; /* Ukuran font untuk judul */
     margin-bottom: 20px; /* Jarak bawah */
     font-family: 'Poppins', sans-serif; /* Font untuk judul */
