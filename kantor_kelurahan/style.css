@@ -1,0 +1,1060 @@
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+header {
+    background: white;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header a, 
+header h1,
+header nav ul li a,
+.dropdown-menu li a {
+    color: #333 !important; /* Memaksa warna hitam */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.logo h1 {
+    font-size: 20px;
+    margin: 0;
+    color: #333;
+}
+
+/* Navbar */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    transition: color 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+nav a:hover {
+    color: #FF5733;
+}
+
+/* Dropdown Menu */
+nav ul li {
+    position: relative;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li {
+    padding: 10px;
+}
+
+nav ul li ul li a {
+    color: #333;
+}
+
+nav ul li ul li a:hover {
+    color: #FF5733;
+}
+
+nav ul li ul {
+    display: none;
+    position: absolute;
+    background: white;
+    padding: 10px;
+    list-style: none;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    max-height: 300px; /* Menentukan tinggi maksimal */
+    overflow-y: auto; /* Mengaktifkan scroll vertikal */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Navbar saat di-scroll */
+header.scrolled {
+    background: #FF5733;
+}
+
+header.scrolled nav a {
+    color: white;
+}
+
+/* Slider Styles */
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slide img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+.slider .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 15;
+    width: 90%;
+    padding: 30px;
+}
+
+.slider .overlay h2 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+    line-height: 1.2;
+}
+
+.slider .overlay p {
+    font-size: 1.8rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Complaint Button */
+button.complaint-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #FF5733;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button.complaint-btn:hover {
+    background: #e64a2e;
+}
+
+/* Complaint Form */
+.complaint-form {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    max-width: 100%;
+    font-family: 'Poppins', sans-serif;
+    z-index: 9999;
+}
+
+.complaint-form h2 {
+    margin: 0 0 20px 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    color: #333;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #FF5733;
+}
+
+.complaint-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #444;
+    font-size: 0.95rem;
+}
+
+.complaint-form input, 
+.complaint-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.complaint-form input:focus, 
+.complaint-form textarea:focus {
+    outline: none;
+    border-color: #FF5733;
+    box-shadow: 0 0 0 2px rgba(255, 87, 51, 0.1);
+}
+
+.complaint-form textarea {
+    height: 120px;
+    resize: vertical;
+    min-height: 80px;
+}
+
+.complaint-form button {
+    width: 100%;
+    background-color: #FF5733;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.complaint-form button:hover {
+    background-color: #e64a2e;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(255, 87, 51, 0.2);
+}
+
+.complaint-form button:active {
+    transform: translateY(0);
+}
+
+/* Placeholder styling */
+.complaint-form input::placeholder,
+.complaint-form textarea::placeholder {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* Navigation Buttons for Slider */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    z-index: 20;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Sejarah Page Styles */
+#sejarah {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#sejarah h2 {
+    color: #E84C3D;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#sejarah p, 
+#sejarah li {
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+#sejarah ul {
+    margin-bottom: 25px;
+    padding-left: 20px;
+}
+
+#sejarah ul li {
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+#sejarah strong {
+    color: #333;
+    font-weight: 600;
+}
+
+/* Navbar Styles untuk halaman sejarah */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    display: inline-block;
+    position: relative;
+}
+
+.navbar ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: #333;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #FF5733;
+}
+
+/* Dropdown styles */
+.navbar .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    min-width: 200px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 4px;
+}
+
+.navbar .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.navbar .dropdown-menu li {
+    display: block;
+}
+
+.navbar .dropdown-menu a {
+    padding: 10px 20px;
+}
+
+/* Visi & Misi Page Styles */
+#visimisi {
+    padding-top: 180px;
+    padding-bottom: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#visimisi h1 {
+    color: #333;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.visi {
+    margin-bottom: 40px;
+}
+
+.visi h2, .misi h2 {
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.visi p {
+    color: #333;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.misi ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.misi ul li {
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.misi ul li:before {
+    content: "•";
+    position: absolute;
+    left: 10px;
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #visi-misi {
+        padding-top: 80px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    #visi-misi h1 {
+        font-size: 2rem;
+    }
+
+    .visi h2, .misi h2 {
+        font-size: 1.5rem;
+    }
+
+    .visi p {
+        font-size: 1.1rem;
+    }
+}
+
+/* Tentang Kami Styles - sama dengan sejarah */
+#tentang-kami {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#tentang-kami h2 {
+    color: #E84C3D;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.content-container {
+    display: flex;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.text-content {
+    flex: 2;
+}
+
+.batas-section h3 {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+}
+
+.batas-grid {
+    margin-bottom: 40px;
+}
+
+.batas-row, .info-row {
+    display: flex;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.batas-label, .info-label {
+    flex: 0 0 100px;
+    font-weight: bold;
+    color: #333;
+}
+
+.batas-value, .info-value {
+    flex: 1;
+    color: #333;
+}
+
+.info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.map-content {
+    flex: 1;
+    position: sticky;
+    top: 100px;
+}
+
+.map-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+@media (max-width: 992px) {
+    .content-container {
+        flex-direction: column;
+    }
+    
+    .batas-label, .info-label {
+        flex: 0 0 120px;
+    }
+    
+    .map-content {
+        position: static;
+        margin-top: 30px;
+    }
+}
+
+/* Batas Desa style */
+.batas-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.batas {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.batas h4 {
+    color: #333;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.batas p {
+    color: #333;
+    display: inline-block;
+}
+
+/* Luas dan Jumlah Penduduk style */
+.info-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.info-item {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.info-item h3 {
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.info-item p {
+    color: #333;
+}
+
+/* Kontak Styles */
+#kontak {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#kontak h2 {
+    color: #333;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.kontak-container {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.kontak-info, .kontak-form {
+    flex: 1;
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.kontak-info h3, .kontak-form h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.kontak-info p {
+    margin-bottom: 15px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background: #FF5733;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: #e64a2e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .kontak-container {
+        flex-direction: column;
+    }
+    
+    .kontak-info, .kontak-form {
+        width: 100%;
+    }
+}
+
+.kontak-info {
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.kontak-info h3 {
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.kontak-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 200px;
+}
+
+.kontak-info h4 {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.kontak-info .alamat {
+    flex: 1;
+}
+
+.kontak-info .jam-operasional {
+    flex: 1;
+    padding-left: 100px;
+    margin-right: -50px;
+}
+
+.kontak-info .alamat p {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 5px;
+}
+
+.kontak-info .jam-operasional ul {
+    list-style: none;
+    padding: 0;
+}
+
+.kontak-info .jam-operasional li {
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .kontak-flex {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .kontak-info .jam-operasional {
+        padding-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* UMKM Styles */
+#umkm {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#umkm h2 {
+    color: #333;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.umkm-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.umkm-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.umkm-card:hover {
+    transform: translateY(-5px);
+}
+
+.umkm-info h3 {
+    color: #333;
+    font-size: 1.3rem;
+    margin: 15px 0;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+}
+
+.umkm-info p {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.umkm-info .nama,
+.umkm-info .karyawan,
+.umkm-info .alamat,
+.umkm-info .kontak {
+    font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .umkm-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+#layanan {
+    padding: 100px 20px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#layanan h2 {
+    color: #E84C3D;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.persyaratan-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.persyaratan-container h3 {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #E84C3D;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.persyaratan-list {
+    list-style: none;
+    padding: 0;
+}
+
+.persyaratan-list li {
+    color: #333;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    padding-left: 25px;
+}
+
+.persyaratan-list li:before {
+    content: "•";
+    color: #E84C3D;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.persyaratan-list li:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 768px) {
+    #layanan {
+        padding: 80px 15px 30px;
+    }
+    
+    #layanan h2 {
+        font-size: 2rem;
+    }
+}
+
+.layanan-header {
+    margin-bottom: 40px;
+}
+
+.layanan-header img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Hamburger menu styles */
+.menu-toggle {
+    display: none;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+    header {
+        background: #8B0000;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo h1 {
+        color: white;
+        font-size: 18px;
+        margin-right: 40px;
+    }
+
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+        margin-right: 10px; /* Sesuaikan posisi ke tengah */
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #8B0000;
+        z-index: 1000;
+    }
+
+    .nav-menu ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .nav-menu ul li {
+        padding: 15px 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-menu ul li a {
+        color: white;
+        text-decoration: none;
+        display: block;
+    }
+
+    /* Style untuk dropdown */
+    .dropdown-menu {
+        display: none;
+        background: #730000;
+        padding-left: 20px;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    header .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    /* Tampilan mobile menu ketika aktif */
+    header nav.active {
+        display: block;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 0;
+    }
+
+    header nav.active ul {
+        display: block;
+        padding: 0;
+    }
+
+    header nav.active ul li {
+        display: block;
+        padding: 15px 20px;
+        border-bottom: 1px solid #eee;
+    }
+
+    header nav.active .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        display: none;
+        padding: 10px 20px;
+        background: #f9f9f9;
+    }
+
+    header nav.active .dropdown.active .dropdown-menu {
+        display: block;
+    }
+
+    /* Tambahkan tanda panah untuk dropdown */
+    header nav.active .dropdown > a:after {
+        content: '▼';
+        float: right;
+    }
+
+    header nav.active ul li a {
+        color: #333;
+    }
+
+    .menu-toggle {
+        color: #333;
+    }
+}
+
